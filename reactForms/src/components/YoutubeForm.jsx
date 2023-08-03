@@ -39,8 +39,12 @@
 
 //hook form 2 -form setup: create the functional component, create a corm within the div, create a label with username text, username, repeate the rest but change values 
 import React from 'react'
+import {useForm } from 'react-hook-form'
 
 function YoutubeForm() {
+  const form = useForm()
+  
+  
   return (
     <div className='table-auto'>
       <form className=''>
