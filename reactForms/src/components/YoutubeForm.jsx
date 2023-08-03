@@ -40,10 +40,12 @@
 //hook form 2 -form setup: create the functional component, create a corm within the div, create a label with username text, username, repeate the rest but change values 
 import React from 'react'
 import {useForm } from 'react-hook-form'
+import { DevTool } from "@hookform/devtools"
+
 
 function YoutubeForm() {
   const form = useForm()
-  const { register } = form
+  const { register, control } = form
   
   
   return (
@@ -64,6 +66,7 @@ function YoutubeForm() {
 
         <button>Submit</button>
       </form>
+      <DevTool  control={control}/>
     </div>
   )
 }
