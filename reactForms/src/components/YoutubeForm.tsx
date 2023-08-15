@@ -15,8 +15,8 @@ type FormValues = {
 export const YoutubeForm = () => {
   
     const form = useForm<FormValues>();
-    const {register, control, handleSubmit } = form
-    
+    const {register, control, handleSubmit, formState } = form
+    const {errors} = formState;
 
     const onSubmit = (data: FormValues) => {
       console.log('Form Submitted', data)
@@ -28,6 +28,7 @@ export const YoutubeForm = () => {
     <div>
       <h1>Youtube Form ({renderCount/2})</h1>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className='form-control'>
         <label htmlFor='username'>Username</label>
         <input type='text' 
         id="username" 
@@ -35,6 +36,8 @@ export const YoutubeForm = () => {
           required: 'Username is required'
         })}
         />
+        <p>{errors.username?.message}</p>
+        </div>
 
         <label htmlFor='email'>Email</label>
         <input type='email' 
@@ -46,7 +49,7 @@ export const YoutubeForm = () => {
           }
         })}
         />
-
+        <p>{errors.email?.message}</p>
         <label htmlFor='channel'>Channel</label>
         <input type='text' 
         id="channel" 
@@ -54,7 +57,7 @@ export const YoutubeForm = () => {
           required: 'Channel is Required'
         })} 
         />
-
+        <p className='error'>{errors.channel?.message}</p>
         <button onClick={() => {}}>Submit</button>
 
       </form>

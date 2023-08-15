@@ -12,3 +12,14 @@
   background-color: black;
   border-radius: 5%;
 }
+
+
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
