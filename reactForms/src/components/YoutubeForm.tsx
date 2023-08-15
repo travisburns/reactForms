@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-
+import {DevTool} from '@hookform/devtools'
 
 
 
@@ -11,7 +11,7 @@ import { useForm } from 'react-hook-form'
 export const YoutubeForm = () => {
   
     const form = useForm();
-    const {register} = form
+    const {register, control } = form
     
 
 
@@ -39,6 +39,7 @@ export const YoutubeForm = () => {
         <button onClick={() => {}}>Submit</button>
 
       </form>
+      <DevTool control={control}/>
     </div>
   )
 }
